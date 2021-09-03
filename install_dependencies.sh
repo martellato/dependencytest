@@ -1,10 +1,10 @@
 #! /bin/bash
 
 if [ ! -d ~/.demoreqs ]; then
-        mkdir .demoreqs
+        mkdir ~/.demoreqs
 fi;
-
-cd .demoreqs
+cp Makefile ~/.demoreqs/
+cd ~/.demoreqs
 
 if [ ! -f /usr/bin/docker ]; then
         mkdir bin
@@ -23,7 +23,7 @@ docker run hello-world
 
 git clone https://github.com/NVIDIA/nvidia-docker.git
 cp -r Makefile ~/.demoreqs/nvidia-docker/
-cd nvidia-docker
+cd ~/.demoreqs/nvidia-docker
 make
 cd ..
 
