@@ -1,4 +1,10 @@
 #! /bin/bash
+for container in $(cat docker_containers)
+do
+	docker kill $container
+	docker rm $container
+done
+
 for image in $(cat docker_images)
 do
 	docker rmi $image
@@ -9,4 +15,6 @@ do
 	rm /usr/local/bin/$file
 done
 
-sudo rm -rf .demoreqs
+sudo pkill docker
+
+sudo rm -rf *
