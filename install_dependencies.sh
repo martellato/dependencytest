@@ -7,8 +7,9 @@ if [ ! -f /usr/bin/docker ]; then
         rm -r docker/
 fi;
 
+sudo mkdir -p /etc/docker/
 sudo python3 daemon_check.py
-sleep 3
+sleep 2
 sudo dockerd &
 sleep 3
 sudo chmod 666 /var/run/docker.sock
