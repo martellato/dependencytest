@@ -10,11 +10,11 @@ do
 	docker rmi $image
 done
 
+sudo pkill docker
+
 for file in $(cat bin_files)
 do
-	rm /usr/local/bin/$file
+	sudo rm /usr/local/bin/$file
 done
-
-sudo pkill docker
 
 sudo rm -rf *
